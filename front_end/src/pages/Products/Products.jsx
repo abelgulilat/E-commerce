@@ -84,19 +84,19 @@ const Product = () => {
           <div className="flex flex-wrap relative items-between mt-[2rem] ml-[10rem]">
             <div>
               <img
-                src={product.image}
-                alt={product.name}
+                src={product?.image}
+                alt={product?.name}
                 className="w-full  xl:w-[50rem] lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
               />
               <HeartIcon product={product} />
             </div>
             <div className="flex flex-col justify-between">
-              <h2 className="text-2xl font-semibold">{product.name}</h2>
+              <h2 className="text-2xl font-semibold">{product?.name}</h2>
 
               <p className="my-4 xl:w-[35rem] lg:w-[35] md:w-[30rem] text-[#B0B0B0]">
-                {product.description}
+                {product?.description}
               </p>
-              <p className="text-5xl my-4 font-extrabold">${product.price}</p>
+              <p className="text-5xl my-4 font-extrabold">${product?.price}</p>
               {/* --------------------------------------------------- */}
 
               <div className="flex items-center justify-between w-[20rem]">
