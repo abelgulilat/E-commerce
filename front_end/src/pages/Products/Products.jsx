@@ -73,7 +73,7 @@ const Product = () => {
           Go Back
         </Link>
       </div>
-      {isLoading ? (
+      {!product ? (
         <Loader />
       ) : error ? (
         <Message variant="danger">
