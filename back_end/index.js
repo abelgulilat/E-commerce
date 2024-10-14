@@ -15,7 +15,7 @@ const start=()=>{
   try {
         connectDB();
 
-        app.listen(port, () => console.log(`Server running on port: http://localhost:${port}`));
+        app.listen(port, () => console.log(`Servers running on port: http://localhost:${port}`));
     
   } catch (error) {
     console.log("something went wrong")
