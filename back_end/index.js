@@ -4,7 +4,7 @@ import connectDB from "./config/config.js";
 
 dotenv.config({path:"./config/config.env"})
 
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 5000;
 
 
 
