@@ -7,6 +7,8 @@ import {
 import { useFetchCategoriesQuery } from "../../redux/api/categoryApiSlice";
 import { toast } from "react-toastify";
 import AdminMenu from "./AdminMenu";
+import { BASE_URL } from "../../redux/constants";
+
 
 const ProductList = () => {
   const [image, setImage] = useState("");
@@ -57,12 +59,12 @@ const ProductList = () => {
     formData.append("image", e.target.files[0]);
 
     try {
-      const res = await uploadProductImage(formData).unwrap();
-      toast.success(res.message);
-      setImage(res.image);
-      setImageUrl(res.image);
+        const res = await uploadProductImage(formData).unwrap();
+        toast.success(res.message);
+        setImage(res.image);
+        setImageUrl(`${BASE_URL}${res.image}`);
     } catch (error) {
-      toast.error(error?.data?.message || error.error);
+        toast.error(error?.data?.message || error.error);
     }
   };
 

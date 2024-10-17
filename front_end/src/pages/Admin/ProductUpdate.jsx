@@ -10,6 +10,7 @@ import {
 import { useFetchCategoriesQuery } from "../../redux/api/categoryApiSlice";
 import { toast  } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { BASE_URL } from "../../redux/constants";
 
 const AdminProductUpdate = () => {
   const params = useParams();
@@ -64,7 +65,7 @@ const AdminProductUpdate = () => {
         position: "top-right",
         autoClose: 2000,
       });
-      setImage(res.image);
+      setImage(`${BASE_URL}${res.image}`);
     } catch (err) {
       toast.success("Item added successfully", {
         position: "top-right",
