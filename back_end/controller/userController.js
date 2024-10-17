@@ -30,6 +30,7 @@ const createUser = asyncHandler(async (req, res) => {
         email: newUser.email,
         isAdmin: newUser.isAdmin,
         });
+        
     } catch (error) {
         res.status(400);
         throw new Error("Invalid user data");
