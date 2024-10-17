@@ -31,7 +31,7 @@ const AllProducts = () => {
                 >
                   <div className="flex">
                     <img
-                      src={`https://e-commerce-6-in4t.onrender.com/${product.image}`}
+                      src={product.image}
                       alt={product.name}
                       className="w-[10rem] object-cover"
                     />

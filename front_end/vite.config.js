@@ -6,11 +6,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api/v1/": "https://e-commerce-6-in4t.onrender.com",
-      "/uploads/": "https://e-commerce-6-in4t.onrender.com",
 
-      
-
+      "/api/": "https://e-commerce-6-in4t.onrender.com",
+      "/uploads/": "https://e-commerce-6-in4t.onrender.com"
+  
     },
   },
+
+
 })
