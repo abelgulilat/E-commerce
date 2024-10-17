@@ -7,11 +7,11 @@ export default defineConfig({
   server: {
     proxy: {
 
-      "/api/": {
+      "/api": {
           target:"https://e-commerce-6-in4t.onrender.com",
           changeOrigin:true,
       },
-      "/uploads/": {
+      "/uploads": {
           target:"https://e-commerce-6-in4t.onrender.com",
           changeOrigin:true,
       }
