@@ -5,15 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    "proxy": {
+    proxy: {
       "/api/v1/": "https://e-commerce-6-in4t.onrender.com",
-      // "/uploads/": "https://e-commerce-6-in4t.onrender.com",
+      "/uploads/": "https://e-commerce-6-in4t.onrender.com",
 
-      "/uploads": {
-        target: "https://e-commerce-6-in4t.onrender.com",
-        changeOrigin: true,
-        secure: false, // Set true if the certificate is valid and secure
-      },
+      
 
     },
   },
