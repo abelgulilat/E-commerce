@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use(cors())
+app.use(cors({origin:'https://e-commerce-7-wbby.onrender.com',credentials: true,} ))
 
 app.use("/api/v1/user",userRouter)
 app.use("/api/v1/category",category)
