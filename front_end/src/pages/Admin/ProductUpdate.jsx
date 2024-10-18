@@ -65,7 +65,7 @@ const AdminProductUpdate = () => {
         position: "top-right",
         autoClose: 2000,
       });
-      setImage(`${BASE_URL}${res.image}`);
+      setImage(res.image);
     } catch (err) {
       toast.success("Item added successfully", {
         position: "top-right",
