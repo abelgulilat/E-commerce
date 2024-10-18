@@ -18,8 +18,8 @@ if (token) {
         throw new Error("Not authorized, token failed.");
     }
 } else {
-    res.status(401);
-    throw new Error("Not authorized, no token.");
+        res.status(401);
+        throw new Error("Not authorized, no token.");
 }
 });
 
