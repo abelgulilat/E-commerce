@@ -75,10 +75,10 @@ const ProductList = () => {
         <div className="md:w-3/4 p-3">
           <div className="h-12">Create Product</div>
 
-          {`${BASE_URL}${imageUrl}` && (
+          {imageUrl && (
             <div className="text-center">
               <img
-                src={`${BASE_URL}${imageUrl}`}
+                src={imageUrl}
                 alt="product"
                 className="block mx-auto max-h-[200px]"
               />
