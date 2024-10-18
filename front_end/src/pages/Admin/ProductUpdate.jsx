@@ -144,7 +144,7 @@ const AdminProductUpdate = () => {
             {image && (
               <div className="text-center">
                 <img
-                  src={image}
+                  src={`${BASE_URL}${image}`}
                   alt="product"
                   className="block mx-auto w-full h-[40%]"
                 />
