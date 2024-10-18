@@ -51,15 +51,15 @@ const loginUser = asyncHandler(async (req, res) => {
         const isPasswordValid = await bcrypt.compare(password,existingUser.password);
         
         if (isPasswordValid) {
-        createToken(res, existingUser._id);
-            
-        res.status(201).json({
-            _id: existingUser._id,
-            username: existingUser.username,
-            email: existingUser.email,
-            isAdmin: existingUser.isAdmin,
-        });
-        return;
+            createToken(res, existingUser._id);
+                
+            res.status(201).json({
+                _id: existingUser._id,
+                username: existingUser.username,
+                email: existingUser.email,
+                isAdmin: existingUser.isAdmin,
+            });
+            return;
         }
         else
             return res.status(301).json({msg:"Password or Email incorrect"})
