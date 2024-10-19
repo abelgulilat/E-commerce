@@ -36,7 +36,7 @@ const ProductCarousel = () => {
       ) : (
         <Slider
           {...settings}
-          className="xl:w-[30rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block"
+          className="xl:w-[40rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block"
         >
           {products.map(
             ({
@@ -62,14 +62,14 @@ const ProductCarousel = () => {
                 <div className="mt-4 flex justify-between">
                   <div className="one">
                     <h2>{name}</h2>
-                    <p> $ {price}</p> <br /> <br />
+                    <p> ${price}</p> <br /> <br />
                     <p className="w-[25rem]">
                       {description.substring(0, 170)} ...
                     </p>
                   </div>
 
-                  <div className="flex justify-between w-[20rem]">
-                    <div className="one">
+                  <div className="flex justify-between w-[20rem] bg-amber-200">
+                    <div className="one bg-pink-300">
                       <h1 className="flex items-center mb-6">
                         <FaStore className="mr-2 text-white" /> Brand: {brand}
                       </h1>
@@ -83,7 +83,7 @@ const ProductCarousel = () => {
                       </h1>
                     </div>
 
-                    <div className="two">
+                    <div className="two bg-cyan-500">
                       <h1 className="flex items-center mb-6">
                         <FaStar className="mr-2 text-white" /> Ratings:{" "}
                         {Math.round(rating)}
