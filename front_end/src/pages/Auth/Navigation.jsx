@@ -45,7 +45,7 @@ const Navigation = () => {
   };
 
   return (
-    <div style={{ zIndex: 9999 }} className={`hidden sm:hidden md:hidden lg:flex xl:flex flex-col justify-between p-4 text-white bg-[#000]  w-[4%] hover:w-[20%] h-[100vh]  fixed ${showSidebar ? "hidden" : "flex"}  `} id="navigation-container">
+    <div style={{ zIndex: 9999 }} className={` sm:hidden md:hidden lg:flex xl:flex flex-col justify-between p-4 text-white bg-[#000]  w-[4%] hover:w-[20%] h-[100vh]  fixed ${showSidebar ? "hidden" : "flex"}  `} id="navigation-container">
       <div className="flex flex-col justify-center space-y-4">
         <Link to="/" className="flex">
           <div className="flex items-center transition-transform transform hover:translate-x-2">

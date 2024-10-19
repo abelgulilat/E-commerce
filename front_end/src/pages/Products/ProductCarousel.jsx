@@ -68,8 +68,8 @@ const ProductCarousel = () => {
                     </p>
                   </div>
 
-                  <div className="flex justify-between w-[20rem] bg-amber-200">
-                    <div className="one bg-pink-300">
+                  <div className="flex justify-between w-[20rem]">
+                    <div className="one">
                       <h1 className="flex items-center mb-6">
                         <FaStore className="mr-2 text-white" /> Brand: {brand}
                       </h1>
@@ -83,7 +83,7 @@ const ProductCarousel = () => {
                       </h1>
                     </div>
 
-                    <div className="two bg-cyan-500">
+                    <div className="two">
                       <h1 className="flex items-center mb-6">
                         <FaStar className="mr-2 text-white" /> Ratings:{" "}
                         {Math.round(rating)}
