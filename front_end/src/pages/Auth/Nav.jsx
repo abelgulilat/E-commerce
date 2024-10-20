@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-// import {mobileNavContainerVariant,mobileNavListVariant,mobileNavExitProps,} from "~/data/animationConfig";
 import Navigation from "../Auth/Navigation.jsx"
 
 const Nav = () => {
