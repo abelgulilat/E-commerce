@@ -37,6 +37,9 @@ const Navigation = () => {
     const toggleDropoff = () => {
         setDropdownOpen(false);
     };
+    const toggleDropDownPhone = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -100,7 +103,7 @@ return (
             </Link>
         </div>
 
-        <div className="relative" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropoff} >
+        <div className="relative" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropoff} onClick={toggleDropdown}>
             <button className="flex items-center text-gray-800 focus:outline-none">
             {userInfo ? (
                 <span className="text-white">{userInfo.username}</span>
@@ -201,7 +204,7 @@ return (
                     className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
                 >
                     <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
-                    <span className="hidden nav-item-name">LOGIN</span>
+                    <span className="hidden nav-item-name-login-logout">LOGIN</span>
                 </Link>
                 </li>
                 <li>
@@ -210,7 +213,7 @@ return (
                     className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
                 >
                     <AiOutlineUserAdd size={26} />
-                    <span className="hidden nav-item-name">REGISTER</span>
+                    <span className="hidden nav-item-name-login-logout">REGISTER</span>
                 </Link>
                 </li>
             </ul>
