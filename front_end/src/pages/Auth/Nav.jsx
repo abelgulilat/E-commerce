@@ -27,7 +27,7 @@ const Nav = () => {
 
         <>
             {isOpen && (
-            <div  >
+            <div  className="w-[50%]" onClick={`toggleNavbar}>{isOpen ? <X /> : <Menu />`}>
                 <Navigation />
 
             </div>
