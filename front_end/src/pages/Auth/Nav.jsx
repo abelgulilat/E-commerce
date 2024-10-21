@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Navigation from "../Auth/Navigation.jsx"
+import "./Navigation.css";
 
 const Nav = () => {
 
@@ -24,22 +25,14 @@ const Nav = () => {
             <Navigation />
         </div>
 
-        <AnimatePresence mode="wait">
+        <>
             {isOpen && (
-            <motion.div
-                layout="position"
-                key="nav-links"
-                // variants={mobileNavContainerVariant}
-                initial="hidden"
-                animate="show"
-                className={`mt-4 basis-full md:hidden ${showSidebar ? "hidden" : "flex"}`}
-                id="navigation-container"
-            >
+            <div  >
                 <Navigation />
 
-            </motion.div>
+            </div>
             )}
-        </AnimatePresence>
+        </>
 
     </div>
 
