@@ -38,7 +38,10 @@ const Navigation = () => {
         setDropdownOpen(false);
     };
     const toggleDropDownPhone = () => {
+    console.log("first",dropdownOpen)
+
         setDropdownOpen(!dropdownOpen);
+
     };
 
     const dispatch = useDispatch();
@@ -58,25 +61,25 @@ const Navigation = () => {
 
 
 return (
-    <div style={{ zIndex: 9999 }} className={`flex  lg:flex xl:flex flex-col justify-between p-4 text-white bg-[#000] w-[200%] md:w-[5.5%] md:hover:w-[20%] h-[100vh]  fixed ${showSidebar ? "hidden" : "flex"}  `} id="navigation-container">
+    <div style={{ zIndex: 9999 }} className={`flex  lg:flex xl:flex flex-col justify-between p-4 text-white bg-[#000] w-[200%] md:w-[5.5%] hover:w-[20%] h-[100vh]  fixed ${showSidebar ? "hidden" : "flex"}  `} id="navigation-container">
         
         <div className="  md:flex flex-col justify-center space-y-4">
             <Link to="/" className="flex">
-                <div className="flex items-center transition-transform transform md:hover:translate-x-2">
+                <div className="flex items-center transition-transform transform hover:translate-x-2">
                     <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
                     <span className="md:hidden nav-item-name mt-[3rem]">HOME</span>{" "}
                 </div>
             </Link>
 
             <Link to="/shop" className="flex">
-                <div className="flex items-center transition-transform transform md:hover:translate-x-2">
+                <div className="flex items-center transition-transform transform hover:translate-x-2">
                     <AiOutlineShopping className="mt-[3rem] mr-2" size={26} />
                     <span className="md:hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
                 </div>
             </Link>
 
             <Link to="/cart" className="flex relative">
-                <div className="flex items-center transition-transform transform md:hover:translate-x-2">
+                <div className="flex items-center transition-transform transform hover:translate-x-2">
                     <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
                     <span className="md:hidden nav-item-name mt-[3rem]">Cart</span>{" "}
                 </div>
@@ -93,7 +96,7 @@ return (
             </Link>
 
             <Link to="/favorite" className="flex relative">
-                <div className="flex justify-center items-center transition-transform transform md:hover:translate-x-2">
+                <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
                     <FaHeart className="mt-[3rem] mr-2" size={20} />
                     <span className="md:hidden nav-item-name mt-[3rem]">
                     Favorites
@@ -103,31 +106,31 @@ return (
             </Link>
         </div>
 
-        <div className="relative" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropoff} onClick={toggleDropdown}>
-            <button className="flex items-center text-gray-800 focus:outline-none">
-            {userInfo ? (
-                <span className="text-white">{userInfo.username}</span>
-            ) : (
-                <></>
-            )}
-            {userInfo && (
-                <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={`h-4 w-4 ml-1 ${
-                    dropdownOpen ? "transform rotate-180" : ""
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="white"
-                >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d={dropdownOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"}
-                />
-                </svg>
-            )}
+        <div className="relative"  onMouseEnter={toggleDropdown} onMouseLeave={toggleDropoff} onClick={toggleDropDownPhone}>
+            <button className="flex items-center text-gray-800 focus:outline-none"  >
+                {userInfo ? (
+                    <span className="text-white">{userInfo.username}</span>
+                ) : (
+                    <></>
+                )}
+                {userInfo && (
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`h-4 w-4 ml-1 ${
+                        dropdownOpen ? "transform rotate-180" : ""
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="white"
+                    >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d={dropdownOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"}
+                    />
+                    </svg>
+                )}
             </button>
 
             {dropdownOpen && userInfo && (
@@ -182,39 +185,39 @@ return (
                 )}
 
                 <li>
-                <Link to="/profile" className="block px-4 py-2 hover:bg-gray-100">
-                    Profile
-                </Link>
+                    <Link to="/profile" className="block px-4 py-2 hover:bg-gray-100">
+                        Profile
+                    </Link>
                 </li>
                 <li>
-                <button
-                    onClick={logoutHandler}
-                    className="block w-full px-4 py-2 text-left hover:bg-gray-100"
-                >
-                    Logout
-                </button>
+                    <button
+                        onClick={logoutHandler}
+                        className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+                    >
+                        Logout
+                    </button>
                 </li>
             </ul>
-            )}
+            )} 
             {!userInfo && (
             <ul>
                 <li>
-                <Link
-                    to="/login"
-                    className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
-                >
-                    <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
-                    <span className="hidden nav-item-name-login-logout">LOGIN</span>
-                </Link>
+                    <Link
+                        to="/login"
+                        className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                    >
+                        <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
+                        <span className="md:hidden nav-item-name">LOGIN</span>
+                    </Link>
                 </li>
                 <li>
-                <Link
-                    to="/register"
-                    className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
-                >
-                    <AiOutlineUserAdd size={26} />
-                    <span className="hidden nav-item-name-login-logout">REGISTER</span>
-                </Link>
+                    <Link
+                        to="/register"
+                        className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                    >
+                        <AiOutlineUserAdd size={26} />
+                        <span className="md:hidden nav-item-name">REGISTER</span>
+                    </Link>
                 </li>
             </ul>
             )}

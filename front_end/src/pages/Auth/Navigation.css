@@ -9,7 +9,7 @@
 } */
 
 /* Initially hide nav-item-name */
-@media screen and (min-width:600px){
+/* @media screen and (min-width:600px){ */
 .nav-item-name {
   display: none;
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
@@ -35,7 +35,7 @@
   display: none;
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
 }
-}
+/* } */
 .nav-item-name-login-logout {
   display: none;
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
