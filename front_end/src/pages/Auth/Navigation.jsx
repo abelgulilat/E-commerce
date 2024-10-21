@@ -55,27 +55,27 @@ const Navigation = () => {
 
 
 return (
-    <div style={{ zIndex: 9999 }} className={`flex  lg:flex xl:flex flex-col justify-between p-4 text-white bg-[#000] w-[20%] md:w-[5.5%] hover:w-[20%] h-[100vh]  fixed ${showSidebar ? "hidden" : "flex"}  `} id="navigation-container">
+    <div style={{ zIndex: 9999 }} className={`flex  lg:flex xl:flex flex-col justify-between p-4 text-white bg-[#000] w-[200%] md:w-[5.5%] md:hover:w-[20%] h-[100vh]  fixed ${showSidebar ? "hidden" : "flex"}  `} id="navigation-container">
         
         <div className="  md:flex flex-col justify-center space-y-4">
             <Link to="/" className="flex">
-                <div className="flex items-center transition-transform transform hover:translate-x-2">
+                <div className="flex items-center transition-transform transform md:hover:translate-x-2">
                     <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
-                    <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
+                    <span className="md:hidden nav-item-name mt-[3rem]">HOME</span>{" "}
                 </div>
             </Link>
 
             <Link to="/shop" className="flex">
-                <div className="flex items-center transition-transform transform hover:translate-x-2">
+                <div className="flex items-center transition-transform transform md:hover:translate-x-2">
                     <AiOutlineShopping className="mt-[3rem] mr-2" size={26} />
-                    <span className="hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
+                    <span className="md:hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
                 </div>
             </Link>
 
             <Link to="/cart" className="flex relative">
-                <div className="flex items-center transition-transform transform hover:translate-x-2">
+                <div className="flex items-center transition-transform transform md:hover:translate-x-2">
                     <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
-                    <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
+                    <span className="md:hidden nav-item-name mt-[3rem]">Cart</span>{" "}
                 </div>
 
                 <div className="absolute top-9">
@@ -90,9 +90,9 @@ return (
             </Link>
 
             <Link to="/favorite" className="flex relative">
-                <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
+                <div className="flex justify-center items-center transition-transform transform md:hover:translate-x-2">
                     <FaHeart className="mt-[3rem] mr-2" size={20} />
-                    <span className="hidden nav-item-name mt-[3rem]">
+                    <span className="md:hidden nav-item-name mt-[3rem]">
                     Favorites
                     </span>{" "}
                     <FavoritesCount />

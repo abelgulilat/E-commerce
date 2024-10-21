@@ -4,11 +4,12 @@
   overflow: hidden; /* Hide overflowing content during transition */
 }
 
-#navigation-container:hover {
+/* #navigation-container:hover {
   width: 15%;
-}
+} */
 
 /* Initially hide nav-item-name */
+/* @media screen and (min-width:600px){ */
 .nav-item-name {
   display: none;
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
@@ -34,3 +35,4 @@
   display: none;
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
 }
+/* } */
