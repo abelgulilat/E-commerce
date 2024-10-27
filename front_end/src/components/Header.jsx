@@ -18,7 +18,7 @@ const Header = () => {
     <>
       <div className="flex justify-around ml-10">
         <div className="block">
-          <div className="xl:grid xl:grid-cols-2">
+          <div className="grid grid-cols-2">
             {data.map((product) => (
               <div key={product._id}>
                 <SmallProduct product={product} />
