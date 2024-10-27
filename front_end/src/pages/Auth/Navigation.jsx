@@ -61,9 +61,9 @@ const Navigation = () => {
 
 
 return (
-    <div style={{ zIndex: 9999 }} className={`flex  lg:flex xl:flex flex-col justify-between p-4 text-white bg-[#000] w-[200%] md:w-[5.5%] hover:w-[20%] h-[100vh]  fixed ${showSidebar ? "hidden" : "flex"}  `} id="navigation-container">
+    <div style={{ zIndex: 9999 }} className={`flex  lg:flex xl:flex flex-col justify-between p-4 text-white bg-[#000] w-[100%] md:w-[5.5%] hover:w-[20%] h-[100vh]  fixed ${showSidebar ? "hidden" : "flex"}  `} id="navigation-container">
         
-        <div className="  md:flex flex-col justify-center space-y-4">
+        <div className="  flex flex-col justify-center space-y-4">
             <Link to="/" className="flex">
                 <div className="flex items-center transition-transform transform hover:translate-x-2">
                     <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />

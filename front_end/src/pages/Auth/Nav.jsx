@@ -27,7 +27,7 @@ const Nav = () => {
 
         <>
             {isOpen && (
-            <div  className={`w-[50%] ${showSidebar ? "hidden" : "flex"} `} >
+            <div  className={` ${showSidebar ? "hidden" : "flex"} `} >
                 <Navigation />
 
             </div>
