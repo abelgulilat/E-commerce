@@ -83,8 +83,8 @@ const Shop = () => {
   return (
     <>
       <div className="container mx-auto ml-20">
-        <div className="flex md:flex-row">
-          <div className="bg-[#151515] p-3 mt-2 mb-2">
+        <div className=" md:flex md:flex-row">
+          <div className="bg-[#151515] p-3 mt-2 mb-2 hidden md:block">
             <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
               Filter by Categories
             </h2>
