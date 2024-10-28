@@ -5,6 +5,7 @@ import ProductCarousel from "../pages/Products/ProductCarousel";
 
 const Header = () => {
   const { data, isLoading, error } = useGetTopProductsQuery();
+  
 
   if (isLoading) {
     return <Loader />;
@@ -16,6 +17,7 @@ const Header = () => {
 
   return (
     <>
+      
       <div className="flex justify-around ml-10">
         <div className="block">
           <div className="grid grid-cols-2">

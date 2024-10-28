@@ -168,11 +168,11 @@ const Shop = () => {
               {products.length === 0 ? (
                 <Loader />
               ) : (
-                products?.map((p) => (
-                  <div className="p-3" key={p._id}>
-                    <ProductCard p={p} />
-                  </div>
-                ))
+                    products?.map((p) => (
+                      <div className="p-3" key={p._id}>
+                        <ProductCard p={p} />
+                      </div>
+                    ))
               )}
             </div>
           </div>
