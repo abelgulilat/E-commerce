@@ -33,6 +33,7 @@ const Login = () => {
         const res = await login({ email, password }).unwrap();
         console.log(res);
         dispatch(setCredentials({ ...res }));
+        cookies.set(res.token)
         navigate(redirect);
     } catch (err) {
         toast.error(err?.data?.message || err.error);
