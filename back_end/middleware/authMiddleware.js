@@ -7,7 +7,7 @@ let token;
 
   // Read JWT from the 'jwt' cookie
 // token = req.cookies.jwt;
-auto = req.headers.authorization;
+const auto = req.headers.authorization;
 
 if(!auto||!auto.startsWith("Bearer"))
     return res.status(201).json({msg:"Not authorized"}) 
