@@ -30,12 +30,12 @@ const Login = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await login({ email, password }).unwrap();
-      console.log(res);
-      dispatch(setCredentials({ ...res }));
-      navigate(redirect);
+        const res = await login({ email, password }).unwrap();
+        console.log(res);
+        dispatch(setCredentials({ ...res }));
+        navigate(redirect);
     } catch (err) {
-      toast.error(err?.data?.message || err.error);
+        toast.error(err?.data?.message || err.error);
     }
   };
 
