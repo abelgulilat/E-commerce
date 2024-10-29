@@ -36,6 +36,10 @@ export const orderApiSlice = apiSlice.injectEndpoints({
         url: `${ORDERS_URL}/mine`,
       }),
       keepUnusedDataFor: 5,
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+        "Content-Type": "application/json"
+      },
     }),
 
     getOrders: builder.query({
