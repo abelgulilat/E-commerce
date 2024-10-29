@@ -8,6 +8,10 @@ export const categoryApiSlice = apiSlice.injectEndpoints({
         url: `${CATEGORY_URL}`,
         method: "POST",
         body: newCategory,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
     }),
 
@@ -16,20 +20,39 @@ export const categoryApiSlice = apiSlice.injectEndpoints({
         url: `${CATEGORY_URL}/${categoryId}`,
         method: "PUT",
         body: updatedCategory,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
     }),
 
     deleteCategory: builder.mutation({
-      query: (categoryId) => ({
+      query: ({categoryId}) => ({
         url: `${CATEGORY_URL}/${categoryId}`,
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
     }),
 
     fetchCategories: builder.query({
-      query: () => `${CATEGORY_URL}/categories`,
+      query: () => ({ 
+        url: `${CATEGORY_URL}/categories`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
+      })
+      
+        
+
+      
     }),
-  }),
+  })
+
 });
 
 export const {

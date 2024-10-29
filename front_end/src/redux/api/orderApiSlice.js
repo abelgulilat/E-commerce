@@ -14,6 +14,10 @@ export const orderApiSlice = apiSlice.injectEndpoints({
     getOrderDetails: builder.query({
       query: (id) => ({
         url: `${ORDERS_URL}/${id}`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
     }),
 
@@ -22,6 +26,10 @@ export const orderApiSlice = apiSlice.injectEndpoints({
         url: `${ORDERS_URL}/${orderId}/pay`,
         method: "PUT",
         body: details,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
     }),
 
@@ -29,22 +37,31 @@ export const orderApiSlice = apiSlice.injectEndpoints({
       query: () => ({
         url: PAYPAL_URL,
       }),
-    }),
-
-    getMyOrders: builder.query({
-      query: () => ({
-        url: `${ORDERS_URL}/mine`,
-      }),
-      keepUnusedDataFor: 5,
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
         "Content-Type": "application/json"
       },
     }),
 
+    getMyOrders: builder.query({
+      query: () => ({
+        url: `${ORDERS_URL}/mine`,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
+      }),
+      keepUnusedDataFor: 5,
+      
+    }),
+
     getOrders: builder.query({
       query: () => ({
         url: ORDERS_URL,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
     }),
 
@@ -52,6 +69,10 @@ export const orderApiSlice = apiSlice.injectEndpoints({
       query: (orderId) => ({
         url: `${ORDERS_URL}/${orderId}/deliver`,
         method: "PUT",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
     }),
 

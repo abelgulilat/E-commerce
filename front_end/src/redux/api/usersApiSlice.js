@@ -33,15 +33,25 @@ export const userApiSlice = apiSlice.injectEndpoints({
     getUsers: builder.query({
       query: () => ({
         url: USERS_URL,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
       providesTags: ["User"],
       keepUnusedDataFor: 5,
+      
     }),
     deleteUser: builder.mutation({
       query: (userId) => ({
         url: `${USERS_URL}/${userId}`,
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
+      
     }),
     getUserDetails: builder.query({
       query: (id) => ({
@@ -54,8 +64,13 @@ export const userApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/${data.userId}`,
         method: "PUT",
         body: data,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
       invalidatesTags: ["User"],
+      
     }),
     updateUserOwn: builder.mutation({
       query: (data) => ({

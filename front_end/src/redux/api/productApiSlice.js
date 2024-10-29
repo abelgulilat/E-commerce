@@ -35,6 +35,10 @@ export const productApiSlice = apiSlice.injectEndpoints({
         url: `${PRODUCT_URL}`,
         method: "POST",
         body: productData,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
       invalidatesTags: ["Product"],
     }),
@@ -52,6 +56,10 @@ export const productApiSlice = apiSlice.injectEndpoints({
         url: `${UPLOAD_URL}`,
         method: "POST",
         body: data,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
     }),
 
