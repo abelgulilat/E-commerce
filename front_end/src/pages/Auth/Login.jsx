@@ -35,7 +35,9 @@ const Login = () => {
         console.log(res);
         dispatch(setCredentials({ ...res }));
         console.log("abel " ,res.token)
-        cookies.set("jwt",res.token, { expires: 7, secure: true, sameSite: 'Strict' })
+        // cookies.set("jwt",res.token, { expires: 7, secure: true, sameSite: 'Strict' })
+        localStorage.setItem("jwt", res.token);
+
         navigate(redirect);
     } catch (err) {
         toast.error(err?.data?.message || err.error);

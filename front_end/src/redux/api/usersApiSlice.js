@@ -62,6 +62,10 @@ export const userApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/updateprofile`,
         method: "PUT",
         body: data,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`, // Adding token from localStorage
+          "Content-Type": "application/json"
+        },
       }),
       invalidatesTags: ["User"],
     }),

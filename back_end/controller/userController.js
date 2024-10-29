@@ -54,11 +54,12 @@ const loginUser = asyncHandler(async (req, res) => {
             const tokens = createToken(res, existingUser._id);
                 
             res.status(201).json({
-                token: tokens,
                 _id: existingUser._id,
                 username: existingUser.username,
                 email: existingUser.email,
                 isAdmin: existingUser.isAdmin,
+                token: tokens,
+
             });
             return;
         }
